@@ -23,6 +23,7 @@ try {
 }
 
 http.createServer((req, res) => {
+  res.setHeader("Content-Type", "text/plain; charset=utf-8");
   if (req.url === "/crash") {
     console.log("Маршрут /crash: процесс завершается с кодом 1");
     res.end("Сбой по запросу\n");
